@@ -38,9 +38,9 @@ public class EmployeeControllersTests {
 
     @Test
     public void EmployeeController_GetAllEmployees_ReturnAllEmployees() throws Exception {
-        employees.add(0, new Employee(1L,"Joan", "Operator"));
-        employees.add(1, new Employee(2L,"Justin", "Operator"));
-        employees.add(2, new Employee(3L,"Joshua", "Foreman"));
+        employees.add(0, new Employee(1L,"Joan", "123hey","3477@gmail.com", "Operator"));
+        employees.add(1, new Employee(2L,"Justin","345bye","3785@gmail.com", "Operator"));
+        employees.add(2, new Employee(3L,"Joshua","678bye","3555@gmail.com", "Foreman"));
 
 
 

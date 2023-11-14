@@ -31,7 +31,7 @@ public class EmployeeController {
 
     @PostMapping(path = "/save")
     public ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee) {
-        return  new ResponseEntity<>(employeeService.saveEmployee(employee),HttpStatus.OK);
+        return new ResponseEntity<>(employeeService.saveEmployee(employee), HttpStatus.OK);
     }
 
     @PutMapping(path = "/update/{id}")
@@ -44,5 +44,7 @@ public class EmployeeController {
     @DeleteMapping(path = "/delete/{id}")
     public void deleteEmployeeById(@PathVariable(value = "id") Long id) {
         employeeService.deleteEmployeeById(id);
+        {
+        }
     }
 }

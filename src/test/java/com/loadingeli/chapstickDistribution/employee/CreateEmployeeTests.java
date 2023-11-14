@@ -9,7 +9,7 @@ public class CreateEmployeeTests {
 
     @Test
     public void createEmployeeTest() {
-        Employee firstEmployee = new Employee(1l,"john", "Designer");
+        Employee firstEmployee = new Employee(1l,"john","123peace","345@gmail.com", "Designer");
         assertEquals("john", firstEmployee.getName());
         assertEquals("Designer", firstEmployee.getRole());
     }
