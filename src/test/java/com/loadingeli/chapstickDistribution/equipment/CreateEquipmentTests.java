@@ -7,7 +7,7 @@ public class CreateEquipmentTests {
 
     @Test
     public void CreateSingleCustomer() {
-        Equipment firstEquipment = new Equipment(1L,"Backhoe",1234456);
+        Equipment firstEquipment = new Equipment(1L,"John Deere", "Backhoe",1234456);
 
         Assertions.assertEquals("Backhoe", firstEquipment.getType());
     }

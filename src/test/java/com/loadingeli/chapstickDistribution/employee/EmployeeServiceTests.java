@@ -24,7 +24,7 @@ public class EmployeeServiceTests {
     @Test
     public void EmployeeService_add_NewEmployee() {
 
-        Employee firstEmployee = new Employee(1l,"Jeese","123byte","345@gmail.com","Designer");
+        Employee firstEmployee = new Employee(1l,"Jeese","123byte","345@gmail.com",0,"Designer");
 
         when(employeeRepository.save(Mockito.any(Employee.class))).thenReturn(firstEmployee);
 

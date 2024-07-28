@@ -20,7 +20,7 @@ public class EmployeeRepositoryTests {
     @Test
     public void EmployeeRepository_SaveAll_ReturnsSavedEmployee() {
         //Arrange
-        Employee employee1 = new Employee(1L, "Mark","345love","345@gmail.com", "Engineer");
+        Employee employee1 = new Employee(1L, "Mark","345love","345@gmail.com",0, "Engineer");
 
         //Act
         Employee saveEmployee = employeeRepository.save(employee1);
@@ -33,7 +33,7 @@ public class EmployeeRepositoryTests {
     @Test
     public void EmployeeRepository_FindById_ReturnEmployee() {
         //Arrange
-        Employee employee = new Employee(1L,"Harry","678win","345@gmail.com","Analyst");
+        Employee employee = new Employee(1L,"Harry","678win","345@gmail.com",0,"Analyst");
         //Act
         employeeRepository.save(employee);
         Employee savedEmployee = employeeRepository.findById(employee.getId()).get();
@@ -44,7 +44,7 @@ public class EmployeeRepositoryTests {
 
     @Test
     public void EmployeeRepository_Update_ReturnUpdatedEmployee() {
-        Employee firstEmployee = new Employee(1L,"Frank","123hello","345@gmail.com","Tester");
+        Employee firstEmployee = new Employee(1L,"Frank","123hello","345@gmail.com",0,"Tester");
 
         employeeRepository.save(firstEmployee);
 
@@ -60,7 +60,7 @@ public class EmployeeRepositoryTests {
 
     @Test
     public void EmployeeRepository_Delete_ReturnEmpty() {
-        Employee employee = new Employee(1L, "Louis","345right","345@gmail.com", "Tester");
+        Employee employee = new Employee(1L, "Louis","345right","345@gmail.com",0, "Tester");
 
         employeeRepository.save(employee);
 

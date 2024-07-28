@@ -3,6 +3,7 @@ package com.loadingeli.chapstickDistribution.employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,17 +23,19 @@ public class EmployeeService {
 
 
     public Employee saveEmployee(Employee employee) {
+        System.out.println("Employee is: " + employee);
         return employeeRepository.save(employee);
     }
 
     public Employee updateEmployee(Long id, Employee employee) {
-        Employee foundedEmployee = employeeRepository.findById(id).get();
+        Employee foundedEmployee = employeeRepository.getReferenceById(id);
 
         foundedEmployee.setName(employee.getName());
         foundedEmployee.setRole(employee.getRole());
+        foundedEmployee.setEmail(employee.getEmail());
+        foundedEmployee.setHours(employee.getHours());
 
-        return foundedEmployee;
-
+        return employeeRepository.save(foundedEmployee);
     }
 
     public Optional<Employee> getEmployeeById(Long id) {
@@ -41,5 +44,9 @@ public class EmployeeService {
 
     public void deleteEmployeeById(Long id) {
         employeeRepository.deleteById(id);
+    }
+
+    public List<Employee> getEmployeesById(List<Long> employeesIDS) {
+        return employeeRepository.findAllById(employeesIDS);
     }
 }

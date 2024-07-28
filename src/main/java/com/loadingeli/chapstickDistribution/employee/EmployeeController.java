@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "api/v1/employee")
+@CrossOrigin
 public class EmployeeController {
     private final EmployeeService employeeService;
 
@@ -31,6 +32,8 @@ public class EmployeeController {
 
     @PostMapping(path = "/save")
     public ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee) {
+        System.out.println("Employee is in Controller: " + employee);
+
         return new ResponseEntity<>(employeeService.saveEmployee(employee), HttpStatus.OK);
     }
 
@@ -44,7 +47,5 @@ public class EmployeeController {
     @DeleteMapping(path = "/delete/{id}")
     public void deleteEmployeeById(@PathVariable(value = "id") Long id) {
         employeeService.deleteEmployeeById(id);
-        {
-        }
     }
 }
